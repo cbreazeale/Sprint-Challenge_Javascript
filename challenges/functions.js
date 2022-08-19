@@ -27,15 +27,15 @@ function greeting(first, last){
 }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+// console.log(consume(2,2,add)); // 4
+// console.log(consume(10,16,multiply)); // 160
+// console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ====
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
-
+//a func can always acess the scope 'above it'
 // Explanation:
 
 
