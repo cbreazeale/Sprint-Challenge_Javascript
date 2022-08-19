@@ -66,12 +66,17 @@ graduates.map(el => {
   contactInfo.push(el.first_name + " " + el.email)
 })
 console.log(contactInfo);
+console.log('_______________')
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
-
+const uni = graduates.filter(el => {
+  (el.university.includes('Uni'))
+}).map(el => {
+  el.university
+})
 console.log(uni);
+
 
 
 // ==== ADVANCED Array Methods ====
@@ -96,6 +101,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+zooAnimals.forEach(el=>{
+  animalNames.push(el.animal_name + ', Scientific:' + el.scientific_name)
+})
 console.log(animalNames);
 
 /* Request 2: .map()
@@ -104,7 +112,10 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
+const lowerCase = zooAnimals.map(el=>{
+  return el.animal_name.toLowerCase()
+})
+
 console.log(lowerCase);
 
 /* Request 3: .filter()
@@ -120,10 +131,12 @@ console.log(lowerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+let populationTotal =[];
+
+populationTotal = zooAnimals.reduce((accum,el) => {
+  return accum + el.population
+},0)
 console.log(populationTotal);
-
-
 /*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
